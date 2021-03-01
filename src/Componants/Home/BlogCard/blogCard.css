@@ -1,0 +1,10 @@
+.blogCard{
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.blogCard img {
+    height: 40px;
+}
+.blogCardText{
+    margin-left: 15px;
+}

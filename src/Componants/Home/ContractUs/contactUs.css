@@ -1,0 +1,50 @@
+.contactUs{
+    background-image: url('../../../images/chair.png');
+    height: 560px;
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 0;
+    
+}
+/* .contactUs::before{
+   content: "";
+    display: block; 
+    position: absolute;
+    background-color: rgb(36,41,73);
+    opacity: .7;
+    height: 100%;
+    width: 100%;
+   
+    top: 0; 
+    cursor: pointer;
+
+} */
+.contact{
+    content: "";
+    display: block; 
+    position: absolute;
+    background: rgb(36,41,73);
+    opacity: .9;
+    height: 100%;
+    width: 100%;
+}
+.form input{
+ margin-top: 25px;
+ height: 50px;
+ width: 70%;
+ text-align: justify;
+ padding-left: 20px;
+}
+.form textarea{
+    margin-top: 25px;
+    height: 150px;
+    width: 70%;
+    text-align: justify;
+    padding-left: 20px;
+   }
+.form Button{
+    margin-top: 10px;
+}

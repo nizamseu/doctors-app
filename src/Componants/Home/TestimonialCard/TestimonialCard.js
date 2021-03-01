@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import '../Testimonial/testimonial.css'
 const TestimonialCard = ({data}) => {
 
     return (
