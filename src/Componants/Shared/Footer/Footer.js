@@ -21,7 +21,7 @@ const Footer = () => {
 
 
            <div className="col-md-3">
-              <h5 style={{color:'#1CC7C1',marginBottom:'35px'}}>Our Services</h5>
+              <h5 style={{color:'brand-color',marginBottom:'35px'}}>Our Services</h5>
               <h6>Emergency Dental Care</h6>
               <h6>Check Up </h6>
               <h6>Treatment Of Personal Diseases</h6>
@@ -34,7 +34,7 @@ const Footer = () => {
 
 
            <div className="col-md-3">
-             <h5 style={{color:'#1CC7C1',marginBottom:'35px'}}> Oral Health</h5>
+             <h5 style={{color:'brand-color',marginBottom:'35px'}}> Oral Health</h5>
             
               <h6>Emergency Dental Care</h6>
               <h6>Check Up </h6>
@@ -48,7 +48,7 @@ const Footer = () => {
 
 
            <div className="col-md-3">
-              <h5 style={{color:'#1CC7C1',marginBottom:'35px'}}> Our Address</h5>
+              <h5 style={{color:'brand-color',marginBottom:'35px'}}> Our Address</h5>
              <h6> New York-1010010 Hydson Yard</h6>
                <div style={{color:'#1CC7C1'}} className='mt-5 mb-5'>
                
