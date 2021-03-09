@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import  firebase from 'firebase';
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
@@ -16,9 +16,15 @@ if (!firebase.apps.length) {
  }
 
 const Login = () => {
-   const [userInfo,setUserInfo] =useContext(userAuth)
-   const provider = new firebase.auth.GoogleAuthProvider();
-   console.log(userInfo);
+   const [userInfo,setUserInfo] =useContext(userAuth);
+   const [user,setUser]=useState({
+     email:'',
+     password:''
+   })
+console.log("user",user);
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
 
 const handleWithGoogle =()=>{
     firebase.auth()
@@ -47,9 +53,24 @@ const container = React.useRef(null);
 const handleClick = () => {
   setShow(!show);
 };
+//create user email and passs
+
+
 
 const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
+const onSubmit = data =>{
+  firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+   console.log("n",user);
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+}
   
     return (
         <div className='row '>
@@ -58,7 +79,7 @@ const { register, handleSubmit, watch, errors } = useForm();
             className="btn btn-primary">Google</button>
 
         <button type="button" onClick={handleClick}>
-        {show ? 'LogIn' : 'LogOut'}
+        {show ? 'Log  `In' : 'LogOut'}
       </button>
 
         {
@@ -72,8 +93,8 @@ const { register, handleSubmit, watch, errors } = useForm();
               
                 <form className='login'  onSubmit={handleSubmit(onSubmit)}>
 
-                    <input className='login' name="name" ref={register({ required: true })} placeholder='User Name' />
-                    {errors.name && <span>This field is required</span>}
+                    <input className='login' name="email" ref={register({ required: true })} placeholder='User Name' />
+                    {errors.email && <span>This field is required</span>}
                     <br/> 
                     <input name="password" type='password' ref={register({ required: true })} placeholder='Password' />
                     {errors.password && <span>This field is required</span>}

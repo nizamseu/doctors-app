@@ -5,6 +5,7 @@ import Home from './Componants/Home/Home/Home';
 import Appoinment from './Componants/Appoinment/Apoinment/Appoinment';
 import { createContext, useState } from 'react';
 import Login from './Componants/Login/Login/Login';
+import Dashboard from './Componants/Dashboard/Dashboard/Dashboard';
 export const userAuth = createContext()
 function App() {
 
@@ -34,6 +35,10 @@ function App() {
 
             <Route path='/login'>
                <Login></Login>
+            </Route>
+              
+            <Route path='/dashboard'>
+                <Dashboard></Dashboard>
             </Route>
 
               <Route path='*'>

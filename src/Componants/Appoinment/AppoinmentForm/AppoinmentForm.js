@@ -8,10 +8,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useForm } from "react-hook-form";
-import './AppoinmentForm.css'
+import './AppoinmentForm.css';
+
 const AppoinmentForm = ({card,date}) => {
   const [open, setOpen] =useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -20,8 +20,25 @@ const AppoinmentForm = ({card,date}) => {
   };
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = data => {
-    console.log(data)
-    handleClose()
+     data.service= card;
+    //  data.date=date.toLocaleDateString();
+     data.created= new Date();
+
+    fetch(`http://localhost:5000/addApoinment`,{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(data)
+    })
+    .then(res=>res.json())
+    .then(success=>{
+        if(success){
+          
+          alert("Appointment Created")
+        }
+        handleClose()
+    })
+
+    
   };
 
     return (
@@ -47,14 +64,14 @@ const AppoinmentForm = ({card,date}) => {
           {errors.phone && <span>This field is required</span>}
           <br/>
 
-          <input className='form' name="date" defaultValue={date.toDateString()} ref={register({ required: true })} placeholder='DD/MM/YY' />
+          <input className='form' name="date" defaultValue={date.toLocaleDateString()} ref={register({ required: true })} placeholder='DD/MM/YY' />
           {errors.date && <span>This field is required</span>}
           <br/><br/>
          <div className='d-flex'>
           <select className='form-select ' name="gender" ref={register}>
-              <option value="female">female</option>
-              <option value="male">male</option>
-              <option value="other">other</option>
+              <option value="female">Male</option>
+              <option value="male">Female</option>
+              <option value="other">Other</option>
             </select>
 
             <input className='form-select' name="age" ref={register({ required: true })} placeholder='Your Age' />
