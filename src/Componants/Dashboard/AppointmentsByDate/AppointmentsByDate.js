@@ -19,7 +19,7 @@ const AppointmentsByDate = ({loadData}) => {
     console.log(loadAppointment);
     return (
         <div>
-            <h1>Appointments</h1>
+            <h1 className=' mt-5 d-flex  justify-content-center '>Appointments</h1>
             {
               loadData.length 
             ? 

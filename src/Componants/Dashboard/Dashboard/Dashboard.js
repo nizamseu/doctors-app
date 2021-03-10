@@ -3,6 +3,11 @@ import AppointmentsByDate from '../AppointmentsByDate/AppointmentsByDate';
 import Sidebar from '../Sidebar/Sidebar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import DashBoardAppointmenta from '../DashBoardAppointmenta/DashBoardAppointmenta';
+import { BrowserRouter as Router,Switch, Route,Link} from "react-router-dom";
+import Patients from '../Patients/Patients';
+import Prescription from '../Prescription/Prescription';
+import Setting from '../Setting/Setting';
 
 const Dashboard = () => {
     const [selectedDate,setSelectedDate]=useState(new Date().toLocaleDateString())
@@ -27,25 +32,49 @@ const Dashboard = () => {
     },[selectedDate])
 
     return (
-        <section>
+        
+            <Router>
+            <Switch>
             <div className="container-fluid row">
-                <div className="col-md-2">
-                        <Sidebar></Sidebar>
-                </div>
+               
+                    <div className="col-md-2">
+                            <Sidebar></Sidebar>
 
-                <div className="col-md-5">
-                <Calendar
-                  
-                onChange={handleDate}
-                value={new Date()}
-                    />
-                </div>
+                            {/* <Link to='/dashboard/appointment'>Home</Link><br/>
+                            <Link to='/dashboard/patients'>ME</Link><br/>
+                            <Link to='/dashboard/prescription'>MY</Link><br/>
+                            <Link to='/dashboard/appointment'>MINE</Link><br/>
+                            <Link to='/dashboard/setting'>US</Link> */}
+                    </div>
+                    
+                    
+                    <div className="col-md-10">
+                        <div className='d-flex row'>
+                            <Route path='/dashboard/appointment'>
+                                <DashBoardAppointmenta></DashBoardAppointmenta>
+                            </Route>
 
-                <div className="col-md-5">
-                        <AppointmentsByDate loadData={loadData}></AppointmentsByDate>
-                </div>
+                            <Route path='/dashboard/patients'>
+                                    <Patients></Patients>
+                            </Route>
+
+                            <Route path='/dashboard/prescription'>
+                                    <Prescription></Prescription>
+                            </Route>
+
+                            <Route path='/dashboard/setting'>
+                                    <Setting></Setting>
+                            </Route>
+                       
+                        </div>
+                    </div>
+                   
+                   
+                
             </div>
-        </section>
+            </Switch>
+            </Router>
+        
     );
 };
 
