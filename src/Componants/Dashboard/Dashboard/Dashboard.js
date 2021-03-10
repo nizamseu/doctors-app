@@ -8,6 +8,7 @@ import { BrowserRouter as Router,Switch, Route,Link} from "react-router-dom";
 import Patients from '../Patients/Patients';
 import Prescription from '../Prescription/Prescription';
 import Setting from '../Setting/Setting';
+import View from '../View/View';
 
 const Dashboard = () => {
     const [selectedDate,setSelectedDate]=useState(new Date().toLocaleDateString())
@@ -35,9 +36,9 @@ const Dashboard = () => {
         
             <Router>
             <Switch>
-            <div className="container-fluid row">
+            <div  className="container-fluid row ml-0">
                
-                    <div className="col-md-2">
+                    <div className="col-md-2 sidebar">
                             <Sidebar></Sidebar>
 
                             {/* <Link to='/dashboard/appointment'>Home</Link><br/>
@@ -48,7 +49,7 @@ const Dashboard = () => {
                     </div>
                     
                     
-                    <div className="col-md-10">
+                    <div className="col-md-10 dashBoard">
                         <div className='d-flex row'>
                             <Route path='/dashboard/appointment'>
                                 <DashBoardAppointmenta></DashBoardAppointmenta>
@@ -64,6 +65,9 @@ const Dashboard = () => {
 
                             <Route path='/dashboard/setting'>
                                     <Setting></Setting>
+                            </Route>
+                            <Route path='/dashboard/view/:id'>
+                                    <View></View>
                             </Route>
                        
                         </div>

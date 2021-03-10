@@ -29,7 +29,7 @@ const DashBoardAppointmenta = () => {
         <section className='d-flex'>
             <div className="col-md-6 mt-5">
                     <Calendar
-                  
+                    className='reactCalendar'
                   onChange={handleDate}
                   value={new Date()}
                       />

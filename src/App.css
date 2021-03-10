@@ -1,3 +1,30 @@
 .brand-color{
     color: #1CC7C1;
 }
+.reactCalendar {
+    border: 0 !important;
+}
+.dashBoard{
+    background: #F4FBFD;
+    height: 100vh auto;
+    width: 100vw auto;
+    position: fixed;
+}
+.sidebar{
+    background: #13D0D1;
+    height: 100vh;
+   position: fixed;
+    
+    
+}
+.not_Found{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+}
