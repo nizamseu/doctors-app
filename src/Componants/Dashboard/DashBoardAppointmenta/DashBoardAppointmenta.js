@@ -38,7 +38,7 @@ const DashBoardAppointmenta = () => {
 
             <div className="col-md-6">
             <AppointmentsByDate loadData={loadData}></AppointmentsByDate>
-            <Test></Test>
+           
             </div>
            <div>
           

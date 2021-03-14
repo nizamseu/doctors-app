@@ -22,7 +22,7 @@ const AppoinmentForm = ({card,date}) => {
   const onSubmit = data => {
      data.service= card;
     //  data.date=date.toLocaleDateString();
-    data.isVisited=false;
+    data.isVisited='Not Visited';
     data.actionType='Pending';
     data.created= new Date();
 

@@ -8,9 +8,9 @@ const AppoinmentHeader = ({handleDate}) => {
     return (
         <main style={{height:'600px'}} className='row d-flex align-items-center'>
             <div className="col-md-4 offset-md-1">
-                    <h1 className='header-text'>Appoinment</h1>
-                    <Calendar
-                    
+                    <h4 className='header-text pb-3'>Appoinment</h4>
+                    <Calendar 
+                        className='reactCalendar'
                         onChange={handleDate}
                         value={new Date()}
                     />
