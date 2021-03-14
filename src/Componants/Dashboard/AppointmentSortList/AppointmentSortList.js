@@ -32,15 +32,15 @@ const handleChange=(e,id)=>{
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
               {
                   loadData&& loadData.map((item,index)=>
-          <tr key={item._id}>
+          <tr key={item._id} >
             <td>{index+1}</td>
             <td>{item.name}</td>
             <td>{item.date}</td>
             <td>
-            <select onChange={e=>handleChange(e,item._id)} className='form-select ' name="isVisited" >
+            <select onChange={e=>handleChange(e,item._id)} className='form-select' name="isVisited" >
             
              <option value="">{item.isVisited}</option>
               <option value="Not Visited">Not Visited</option>

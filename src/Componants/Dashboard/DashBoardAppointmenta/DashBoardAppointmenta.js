@@ -27,7 +27,9 @@ const DashBoardAppointmenta = () => {
 
     },[selectedDate])
     return (
-        <section className='d-flex'>
+        <section >
+            <h5 className='mt-5'>Appointment</h5>
+            <div className='d-flex'>
             <div style={{background:'white'}} className="col-md-6 mt-5 pt-3 d-flex justify-content-center">
                     <Calendar
                     className='reactCalendar'
@@ -40,9 +42,7 @@ const DashBoardAppointmenta = () => {
             <AppointmentsByDate loadData={loadData}></AppointmentsByDate>
            
             </div>
-           <div>
-          
-           </div>
+        </div>
         </section>
     );
 };
