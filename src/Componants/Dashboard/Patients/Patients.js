@@ -4,6 +4,7 @@ import { Table } from 'react-bootstrap';
 
 const Patients = () => {
     const [allPatients,setAllPatients]=useState([]);
+    
 
     useEffect(()=>{
         fetch('http://localhost:5000/allpatients')

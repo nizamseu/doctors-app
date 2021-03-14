@@ -9,6 +9,8 @@ import Patients from '../Patients/Patients';
 import Prescription from '../Prescription/Prescription';
 import Setting from '../Setting/Setting';
 import View from '../View/View';
+import ViewDialog from '../ViewDialog/ViewDialog';
+import DashboardMain from '../DashboardMain/DashboardMain';
 
 const Dashboard = () => {
     const [selectedDate,setSelectedDate]=useState(new Date().toLocaleDateString())
@@ -38,7 +40,7 @@ const Dashboard = () => {
             <Switch>
             <div  className="container-fluid row ml-0">
                
-                    <div className="col-md-2 sidebar">
+                    <div className="col-md-2 ">
                             <Sidebar></Sidebar>
 
                             {/* <Link to='/dashboard/appointment'>Home</Link><br/>
@@ -51,10 +53,13 @@ const Dashboard = () => {
                     
                     <div className="col-md-10 dashBoard">
                         <div className='d-flex row'>
+                       
                             <Route path='/dashboard/appointment'>
                                 <DashBoardAppointmenta></DashBoardAppointmenta>
                             </Route>
-
+                            <Route path='/dashboard/dash'>
+                               <DashboardMain></DashboardMain>
+                            </Route>
                             <Route path='/dashboard/patients'>
                                     <Patients></Patients>
                             </Route>
@@ -70,6 +75,9 @@ const Dashboard = () => {
                                     <View></View>
                             </Route>
                        
+                            <Route path='/dashboard/viewdialog'>
+                                  <ViewDialog></ViewDialog>
+                            </Route>
                         </div>
                     </div>
                    

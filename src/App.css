@@ -6,13 +6,17 @@
 }
 .dashBoard{
     background: #F4FBFD;
-    height: 100vh auto;
-    width: 100vw auto;
-    position: fixed;
+    height: 100vh ;
+    width: 100vw ;
+    
 }
 .sidebar{
     background: #13D0D1;
     height: 100vh;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-left: 10px;
+    left: 0;
    position: fixed;
     
     

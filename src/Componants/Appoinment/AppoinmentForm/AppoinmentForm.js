@@ -22,7 +22,9 @@ const AppoinmentForm = ({card,date}) => {
   const onSubmit = data => {
      data.service= card;
     //  data.date=date.toLocaleDateString();
-     data.created= new Date();
+    data.isVisited=false;
+    data.actionType='Pending';
+    data.created= new Date();
 
     fetch(`http://localhost:5000/addApoinment`,{
       method:'POST',

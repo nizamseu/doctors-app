@@ -1,10 +1,22 @@
+import { Dialog } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ViewDialog from '../ViewDialog/ViewDialog';
 
 const Prescription = () => {
     const [prescription,setPrescription]=useState([]);
+    const [open, setOpen] = useState(false);
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = (value) => {
+      setOpen(false);
+    };
+
 
     useEffect(()=>{
         fetch('http://localhost:5000/allpatients')
@@ -37,14 +49,15 @@ const Prescription = () => {
             <td>{item.phone}</td>
             <td>
                 <Link to={`/dashboard/view/${item._id}`} variant="contained" color="primary">View</Link>
+            
             </td>
           </tr>
-                  )
-              }
-        
+           )}
+    
         </tbody>
       </Table>
         </div>
+        
         </div>
     );
 };

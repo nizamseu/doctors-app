@@ -7,9 +7,9 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import SideBarOption from '../SideBarOption/SideBarOption';
 const Sidebar = () => {
     return (
-        <div >
-           <h1>Sidebar</h1>
-         <SideBarOption  Icon={DashboardIcon} text="Dashboard" pathText="/dashboard/appointment"/>
+        <div className='sidebar'>
+           {/* <h1>Sidebar</h1> */}
+         <SideBarOption  Icon={DashboardIcon} text="Dashboard" pathText="/dashboard/dash"/>
          <SideBarOption Icon={PeopleIcon} text="Patients" pathText="/dashboard/patients" />
          <SideBarOption Icon={NoteAddIcon} text="Prescription " pathText="/dashboard/prescription" />
          <SideBarOption Icon={CalendarTodayIcon} text="Appointment " pathText="/dashboard/appointment" />
