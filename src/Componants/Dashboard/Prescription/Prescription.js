@@ -48,7 +48,7 @@ const Prescription = () => {
             <td>{item.name}</td>
             <td>{item.phone}</td>
             <td>
-                <Link to={`/dashboard/view/${item._id}`} variant="contained" color="primary">View</Link>
+                <Link to={`/dashboard/view/${item._id}`} className='btn btn-primary' >View</Link>
             
             </td>
           </tr>

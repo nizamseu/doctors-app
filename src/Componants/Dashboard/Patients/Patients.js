@@ -39,7 +39,7 @@ const Patients = () => {
             <td>{item.email}</td>
             <td>{item.gender}</td>
             <td>{item.age}</td>
-            <td>{item.weight}</td>
+            <td>{item.weight} kg</td>
             <td>{item.phone}</td>
             <td>{item.service}</td>
           </tr>

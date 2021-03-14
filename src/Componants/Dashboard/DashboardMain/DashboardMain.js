@@ -14,7 +14,7 @@ const DashboardMain = () => {
     },[])
     return (
         <div>
-            <h1>Dash Main</h1>
+            <h4 className='mt-3'>Dashboard </h4>
             <DashboardMainCard loadData={loadData}></DashboardMainCard>
             <RecentAppointment></RecentAppointment>
         </div>

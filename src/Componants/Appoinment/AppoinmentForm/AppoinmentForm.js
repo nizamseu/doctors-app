@@ -71,8 +71,8 @@ const AppoinmentForm = ({card,date}) => {
           <br/><br/>
          <div className='d-flex'>
           <select className='form-select ' name="gender" ref={register}>
-              <option value="female">Male</option>
-              <option value="male">Female</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
               <option value="other">Other</option>
             </select>
 
