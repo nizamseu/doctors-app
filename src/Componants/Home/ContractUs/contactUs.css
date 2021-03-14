@@ -30,18 +30,20 @@
     opacity: .9;
     height: 100%;
     width: 100%;
+    
 }
+
 .form input{
  margin-top: 25px;
  height: 50px;
- width: 70%;
+ width: 100%;
  text-align: justify;
  padding-left: 20px;
 }
 .form textarea{
     margin-top: 25px;
     height: 150px;
-    width: 70%;
+    width: 100%;
     text-align: justify;
     padding-left: 20px;
    }

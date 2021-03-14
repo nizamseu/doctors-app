@@ -5,8 +5,8 @@ import './contactUs.css'
 const ContractUs = () => {
     return (
         <div className='row  d-flex justify-content-center mb-5 mt-5 pt-5 '>
-            <div className='w-75 contactUs text-center '>
-                <div className='contact'>
+            <div className='contactUs text-center '>
+                <div className='contact d-flex justify-content-center'>
                 <ContactDetails></ContactDetails>
                 </div>
             </div>

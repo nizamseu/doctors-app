@@ -6,7 +6,7 @@ const BlogCard = ({blogItem}) => {
 
     return (
         <Card 
-        style={{ width: '19rem',marginLeft:'15px',paddingBottom:'30px'}} >
+        style={{ width: '19rem',marginLeft:'15px',paddingBottom:'30px',border:'none'}} >
             
             <div className='text-center'>
                <div className=' d-flex blogCard'>

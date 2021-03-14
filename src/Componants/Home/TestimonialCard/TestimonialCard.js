@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 const TestimonialCard = ({data}) => {
 
     return (
-        <Card  style={{ width: '19rem',marginLeft:'15px'}} >
+        <Card  style={{ width: '19rem',marginLeft:'15px',border:'none'}} >
             <p>{data.description}</p>
             <div className='text-center'>
                 <img src={data.img} alt=""/>
