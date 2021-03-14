@@ -11,6 +11,7 @@ import Setting from '../Setting/Setting';
 import View from '../View/View';
 import ViewDialog from '../ViewDialog/ViewDialog';
 import DashboardMain from '../DashboardMain/DashboardMain';
+import AddDoctors from '../AddDoctors/AddDoctors';
 
 const Dashboard = () => {
     const [selectedDate,setSelectedDate]=useState(new Date().toLocaleDateString())
@@ -60,6 +61,11 @@ const Dashboard = () => {
                             <Route path='/dashboard/dash'>
                                <DashboardMain></DashboardMain>
                             </Route>
+
+                            <Route path='/dashboard/adddoctors'>
+                               <AddDoctors></AddDoctors>
+                            </Route>
+
                             <Route path='/dashboard/patients'>
                                     <Patients></Patients>
                             </Route>
