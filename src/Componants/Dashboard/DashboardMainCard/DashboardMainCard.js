@@ -12,16 +12,13 @@ const DashboardMainCard = ({loadData}) => {
         })
         .then(res=>res.json())
         .then(result=>{
-            console.log("valuee",result);
             setToday(result)
         })
 
     },[])
-const pa =loadData.filter(item=>item.email)
-console.log("lll",loadData);
- console.log("mm",pa);
+
     return (
-    <section className='d-flex'>
+    <div className='d-flex'>
          <Card style={{width:'20rem',background:'#F1536E',color:'white'}} className='d-flex align-items-center m-2 p-3'>
           <Typography variant='h2'>{today.length}</Typography>
           <Typography className='pl-4'>Today's <br/> Appointment</Typography>
@@ -41,7 +38,7 @@ console.log("lll",loadData);
         <Typography variant='h2'>09</Typography>
           <Typography className='pl-4'>Total <br/> Patients</Typography>
         </Card>
-    </section>
+    </div>
     );
 };
 

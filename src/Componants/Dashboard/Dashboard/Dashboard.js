@@ -39,7 +39,7 @@ const Dashboard = () => {
         
             <Router>
             <Switch>
-            <div  className="container-fluid row ml-0">
+            <div  className="d-flex container-fluid row ml-0">
                
                     <div className="col-md-2 ">
                             <Sidebar></Sidebar>

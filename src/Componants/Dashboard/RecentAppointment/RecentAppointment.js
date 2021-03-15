@@ -31,9 +31,8 @@ const RecentAppointment = () => {
     },[actionId])
 
 
-    console.log("kagu",isUpdate);
     return (
-        <div style={{background:'white'}} className='mt-5'>
+        <div style={{background:'white'}} className='ml-2 mr-2 row mt-5'>
             <h6 className='p-2 m-3'>Recent Apppointments</h6>
             <div className='d-flex'>
             <Table  responsive className='table table-borderless' >

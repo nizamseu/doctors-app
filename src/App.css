@@ -1,34 +1,31 @@
-.brand-color{
-    color: #1CC7C1;
+.brand-color {
+  color: #1cc7c1;
 }
 .reactCalendar {
-    border: 0 !important;
+  border: 0 !important;
 }
-.dashBoard{
-    background: #F4FBFD;
-    height: 100vh ;
-    width: 100vw ;
-    
+.dashBoard {
+  background: #f4fbfd;
+  height: 100vh;
+  width: 100vw;
 }
-.sidebar{
-    background: #13D0D1;
-    height: 100vh;
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-left: 10px;
-    left: 0;
-   position: fixed;
-    
-    
+.sidebar {
+  background: #13d0d1;
+  height: 100vh;
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 5px;
+  left: 0;
 }
-.not_Found{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 150px;
+.not_Found {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150px;
 }

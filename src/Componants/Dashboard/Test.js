@@ -19,6 +19,7 @@ const Test = ({actionId,handleClose,setIsUpdate}) => {
     const handleChange = (event) => {
       setActionValue(event.target.value);
       handleClose()
+      event.preventDefault();
     };
     
     useEffect(()=>{
