@@ -22,7 +22,7 @@ const RecentAppointment = () => {
     };
   
     useEffect(()=>{
-        fetch(`http://localhost:5000/recent`)
+        fetch(`https://lit-brook-48702.herokuapp.com/recent`)
         .then(res=>res.json())
         .then(data=>{
             setRecent(data)

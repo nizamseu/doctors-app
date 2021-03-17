@@ -8,7 +8,7 @@ const View = () => {
     const [view,setView]=useState([]);
     const history=useHistory()
     useEffect(()=>{
-        fetch('http://localhost:5000/view',{
+        fetch('https://lit-brook-48702.herokuapp.com/view',{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify({id})

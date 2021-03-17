@@ -9,7 +9,7 @@ const AppointmentSortList = ({ loadData }) => {
   const handleChange = (e, id) => {
     const isVisited = e.target.value;
     console.log(isVisited, id);
-    fetch(`http://localhost:5000/visited`, {
+    fetch(`https://lit-brook-48702.herokuapp.com/visited`, {
       method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ isVisited: isVisited, id: id }),

@@ -27,7 +27,7 @@ const handleSubmit=(e)=>{
         formData.append('name', info.name)
         formData.append('email', info.email)
 
-        fetch('http://localhost:5000/adddoctor', {
+        fetch('https://lit-brook-48702.herokuapp.com/adddoctor', {
             method: 'POST',
             body: formData
         })

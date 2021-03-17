@@ -8,7 +8,7 @@ const AppointmentsByDate = ({ loadData }) => {
 
   // useEffect(()=>{
 
-  //     fetch('http://localhost:5000/appointmentData')
+  //     fetch('https://lit-brook-48702.herokuapp.com/appointmentData')
   //     .then(res=>res.json())
   //     .then(result=>{
   //        setLoadAppointment(result)

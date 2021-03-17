@@ -26,7 +26,7 @@ const AppoinmentForm = ({card,date}) => {
     data.actionType='Pending';
     data.created= new Date();
 
-    fetch(`http://localhost:5000/addApoinment`,{
+    fetch(`https://lit-brook-48702.herokuapp.com/addApoinment`,{
       method:'POST',
       headers:{'content-type':'application/json'},
       body:JSON.stringify(data)

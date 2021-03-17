@@ -5,7 +5,7 @@ import RecentAppointment from "../RecentAppointment/RecentAppointment";
 const DashboardMain = () => {
   const [loadData, setLoadData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allpatients")
+    fetch("https://lit-brook-48702.herokuapp.com/allpatients")
       .then((res) => res.json())
       .then((result) => {
         setLoadData(result);

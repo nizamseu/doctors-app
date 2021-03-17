@@ -5,7 +5,7 @@ const DashboardMainCard = ({loadData}) => {
     const date =new Date().toLocaleDateString();
     const [today,setToday]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/today',{
+        fetch('https://lit-brook-48702.herokuapp.com/today',{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify({date})

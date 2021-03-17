@@ -23,7 +23,7 @@ const Test = ({actionId,handleClose,setIsUpdate}) => {
     };
     
     useEffect(()=>{
-      fetch(`http://localhost:5000/action`,{
+      fetch(`https://lit-brook-48702.herokuapp.com/action`,{
       method:'PATCH',
       headers:{'content-type':'application/json'},
       body:JSON.stringify({id:actionId,actionValue:actionValue})
