@@ -27,7 +27,6 @@ const RecentAppointment = () => {
         .then(data=>{
             setRecent(data)
         })
-
     },[actionId])
 
 

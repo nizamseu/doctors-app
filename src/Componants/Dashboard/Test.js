@@ -13,13 +13,13 @@ const useStyles = makeStyles((theme) => ({
   }));
 const Test = ({actionId,handleClose,setIsUpdate}) => {
     const history= useHistory()
-    console.log("his",history);
     const [actionValue, setActionValue] = useState('');
     const classes = useStyles();
     const handleChange = (event) => {
+      event.preventDefault()
       setActionValue(event.target.value);
       handleClose()
-      event.preventDefault();
+      
     };
     
     useEffect(()=>{

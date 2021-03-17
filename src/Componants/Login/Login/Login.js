@@ -9,6 +9,8 @@ import { Button } from 'bootstrap';
 import { useForm } from "react-hook-form";
 import loginImg from '../../../images/login.png';
 import './login.css'
+import { useHistory, useLocation } from 'react-router-dom';
+
 
 
 if (!firebase.apps.length) {
@@ -17,11 +19,10 @@ if (!firebase.apps.length) {
 
 const Login = () => {
    const [userInfo,setUserInfo] =useContext(userAuth);
-   const [user,setUser]=useState({
-     email:'',
-     password:''
-   })
-console.log("user",user);
+   const history= useHistory();
+   const location = useLocation();
+   let { from } = location.state || { from: { pathname: "/" } };
+
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -30,7 +31,8 @@ const handleWithGoogle =()=>{
     firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      const {displayName,email,photoURL}=result.user
+        console.log("logged",result);
+    const {displayName,email,photoURL}=result.user
      const logedIn={
          name:displayName,
          email:email,
@@ -39,6 +41,7 @@ const handleWithGoogle =()=>{
 
      }
      setUserInfo(logedIn)
+     storeAuthToken();
 
     })
     .catch((error) => {
@@ -46,31 +49,45 @@ const handleWithGoogle =()=>{
     });
 }
 
+    
+const storeAuthToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        sessionStorage.setItem('token', idToken);
+        history.replace(from);
+      }).catch(function (error) {
+        // Handle error
+      });
+  }
 
-const [show, setShow] = React.useState(false);
-const container = React.useRef(null);
 
-const handleClick = () => {
-  setShow(!show);
-};
+console.log("login Data",userInfo);
+
+// const [show, setShow] = React.useState(false);
+// const container = React.useRef(null);
+
+// const handleClick = () => {
+//   setShow(!show);
+// };
 //create user email and passs
 
 
 
 const { register, handleSubmit, watch, errors } = useForm();
-const onSubmit = data =>{
-  firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-   console.log("n",user);
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ..
-  });
-}
+
+// const onSubmit = data =>{
+//   firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     var user = userCredential.user;
+//    console.log("n",user);
+//   })
+//   .catch((error) => {
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     // ..
+//   });
+// }
   
     return (
         <div className='row '>
@@ -91,7 +108,7 @@ const onSubmit = data =>{
                         <h5 className='text-center'>Login</h5>
                     
               
-                <form className='login'  onSubmit={handleSubmit(onSubmit)}>
+                <form className='login'  >
 
                     <input className='login' name="email" ref={register({ required: true })} placeholder='User Name' />
                     {errors.email && <span>This field is required</span>}

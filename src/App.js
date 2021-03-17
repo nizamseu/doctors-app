@@ -6,6 +6,7 @@ import Appoinment from './Componants/Appoinment/Apoinment/Appoinment';
 import { createContext, useState } from 'react';
 import Login from './Componants/Login/Login/Login';
 import Dashboard from './Componants/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './Componants/Login/Login/PrivateRoute';
 export const userAuth = createContext()
 function App() {
 
@@ -37,9 +38,9 @@ function App() {
                <Login></Login>
             </Route>
               
-            <Route path='/dashboard/'>
+            <PrivateRoute path='/dashboard/'>
                 <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
 
               <Route path='*'>
                   <NotFound></NotFound>

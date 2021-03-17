@@ -1,8 +1,12 @@
+import { Alert } from 'bootstrap';
 import React, { useState } from 'react';
+
+
 
 const AddDoctors = () => {
     const [info,setInfo]=useState({});
     const [file,setFile]=useState(null)
+    const [status,setStatus]=useState(false)
 
     const handleBlur = e =>{
         const newInfo={...info};
@@ -29,7 +33,7 @@ const handleSubmit=(e)=>{
         })
         .then(response => response.json())
         .then(data => {
-            console.log("DFata",data)
+                setStatus(data)
         })
         .catch(error => {
             console.error(error)
@@ -39,14 +43,11 @@ e.target.reset();
 }
 
 
-
-console.log(info,file);
-
     return (
         <div>
-            <h2 className='brand-color'>Add Doctors</h2>
-
-            <form onSubmit={handleSubmit}>
+            <h2 className='brand-color text-center  mt-5'>Add Doctors</h2>
+        <div className='d-flex justify-content-center pl-5'>
+            <form onSubmit={handleSubmit} >
                 <label >Email</label><br/>
                 <input onBlur={handleBlur} type="email" name="email"  placeholder="email Address"/><br/>
                 <label >Name</label><br/>
@@ -54,9 +55,17 @@ console.log(info,file);
                 <label >Upload Your File</label><br/>
                 <input onChange={handleChange} type="file" name="file" placeholder="Upload Your File" /><br/><br/>
                 <button type="submit" className="btn btn-primary">Submit</button>
-               
-                
                 </form>
+        </div>    
+
+        {
+            status&& <p className='text-center' style={{color:'green'}}>Doctor Added</p> 
+        }
+        {
+            status && setTimeout(()=>{
+                setStatus(false)
+            },3000)
+        }
         </div>
     );
 };
